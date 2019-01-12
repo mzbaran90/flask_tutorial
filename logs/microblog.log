@@ -1,0 +1,68 @@
+2019-01-12 13:52:15,116 INFO: Microblog startup [in /Users/MasonBaran/first_flask/app/__init__.py:43]
+2019-01-12 13:52:31,690 ERROR: Exception on /edit_profile [POST] [in /Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 0 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/MasonBaran/first_flask/app/routes.py", line 80, in edit_profile
+    if form.validate_on_submit():
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/flask_wtf/form.py", line 101, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/wtforms/form.py", line 310, in validate
+    return super(Form, self).validate(extra)
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/wtforms/form.py", line 152, in validate
+    if not field.validate(self, extra):
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/wtforms/fields/core.py", line 206, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/wtforms/fields/core.py", line 226, in _run_validation_chain
+    validator(form, self)
+  File "/Users/MasonBaran/first_flask/app/forms.py", line 43, in validate_username
+    user = User.query.filter_by(username=self.username).first()
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2895, in first
+    ret = list(self[0:1])
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2687, in __getitem__
+    return list(res)
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 2995, in __iter__
+    return self._execute_and_instances(context)
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3018, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+    context)
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 248, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type. [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.username = ?\n LIMIT ? OFFSET ?'] [parameters: (<wtforms.fields.core.StringField object at 0x1058e4240>, 1, 0)] (Background on this error at: http://sqlalche.me/e/rvf5)
+2019-01-12 13:54:11,357 INFO: Microblog startup [in /Users/MasonBaran/first_flask/app/__init__.py:43]
