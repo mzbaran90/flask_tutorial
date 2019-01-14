@@ -66,3 +66,10 @@ Traceback (most recent call last):
     cursor.execute(statement, parameters)
 sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type. [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.username = ?\n LIMIT ? OFFSET ?'] [parameters: (<wtforms.fields.core.StringField object at 0x1058e4240>, 1, 0)] (Background on this error at: http://sqlalche.me/e/rvf5)
 2019-01-12 13:54:11,357 INFO: Microblog startup [in /Users/MasonBaran/first_flask/app/__init__.py:43]
+2019-01-12 14:40:56,755 INFO: Microblog startup [in /Users/MasonBaran/first_flask/app/__init__.py:43]
+2019-01-12 14:41:43,566 INFO: Microblog startup [in /Users/MasonBaran/first_flask/app/__init__.py:43]
+2019-01-12 14:42:05,153 INFO: Microblog startup [in /Users/MasonBaran/first_flask/app/__init__.py:43]
+2019-01-12 14:43:58,711 INFO: Microblog startup [in /Users/MasonBaran/first_flask/app/__init__.py:43]
+2019-01-12 14:47:26,873 INFO: Microblog startup [in /Users/MasonBaran/first_flask/app/__init__.py:43]
+2019-01-12 14:49:58,042 INFO: Microblog startup [in /Users/MasonBaran/first_flask/app/__init__.py:43]
+2019-01-12 14:50:02,772 INFO: Microblog startup [in /Users/MasonBaran/first_flask/app/__init__.py:43]
