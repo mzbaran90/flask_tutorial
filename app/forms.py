@@ -45,4 +45,10 @@ class EditProfileForm(FlaskForm):
                 raise ValidationError('Username {} is already taken'.format(user))
 
 
+class PostForm(FlaskForm):
+    post = TextAreaField('Say Something', validators=[
+        DataRequired(), Length(min=1, max=140)])
+    submit = SubmitField('Submit')
+
+
 

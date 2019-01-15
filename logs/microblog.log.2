@@ -1,4 +1,4 @@
-2019-01-14 18:34:53,757 ERROR: Exception on /index [GET] [in /Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/flask/app.py:1761]
+2019-01-14 18:25:54,506 ERROR: Exception on /index [GET] [in /Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/MasonBaran/first_flask/app/routes.py", line 29, in index
-    return render_template('index.html', title='Home', form=form, posts=posts)
+  File "/Users/MasonBaran/first_flask/app/routes.py", line 36, in index
+    return render_template('index.html', title='Home', posts=posts, form=form)
   File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/flask/templating.py", line 134, in render_template
     return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
@@ -107,4 +107,4 @@ Traceback (most recent call last):
   File "/Users/MasonBaran/first_flask/venv/lib/python3.7/site-packages/jinja2/lexer.py", line 690, in tokeniter
     filename)
 jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
-2019-01-14 18:36:10,351 INFO: Microblog startup [in /Users/MasonBaran/first_flask/app/__init__.py:43]
+2019-01-14 18:30:45,148 INFO: Microblog startup [in /Users/MasonBaran/first_flask/app/__init__.py:43]
